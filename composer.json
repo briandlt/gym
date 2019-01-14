@@ -1,0 +1,15 @@
+{
+    "name": "brian/gym",
+    "authors": [
+        {
+            "name": "briandlt",
+            "email": "brianesparzadlt4@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Models\\": "models/"
+        }
+    },
+    "require": {}
+}
