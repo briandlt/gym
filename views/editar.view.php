@@ -1,6 +1,6 @@
 <div class="iziModal" id="modal">
     <section id="formUser" class="formEdit">
-        <h3>Editar Usuario</h3>
+        <h3></h3>
         <form action="" method="post" id="formulario">
             <div>
                 <label for="user">Usuario:</label>
@@ -14,12 +14,12 @@
                 <label for="nameUser">Nombre:</label>
                 <input type="text" name="name" id="nameUser" value="">
             </div>
-            <input type="submit" value="Guardar" id="updateUserButton">
+            <input type="submit" value="Guardar" id="UserButton">
         </form>
     </section>
 
     <section id="formMember" class="formEdit">
-        <h3>Editar Socio</h3>
+        <h3></h3>
         <form action="" method="post" id="formulario">
             <div>
                 <label for="nameMember">Nombre:</label>
@@ -37,12 +37,12 @@
                 <label for="telMember">Teléfono:</label>
                 <input type="text" name="telMember" id="telMember">
             </div>
-            <input type="submit" value="Guardar" id="updateMemberButton">
+            <input type="submit" value="Guardar" id="MemberButton">
         </form>
     </section>
 
     <section id="formMembership" class="formEdit">
-        <h3>Editar Membresia</h3>
+        <h3></h3>
         <form action="" method="post" id="formulario">
             <div>
                 <label for="nameMship">Nombre:</label>
@@ -77,11 +77,11 @@
                 <label for="hFin">Hora final:</label>
                 <input type="time" name="hFin" id="hFin">
             </div>
-            <input type="submit" value="Guardar" id="updateMshipButton">
+            <input type="submit" value="Guardar" id="MshipButton">
         </form>
     </section>
     <section id="formProduct" class="formEdit">
-        <h3>Editar Producto</h3>
+        <h3></h3>
         <form action="" method="post" id="formulario">
             <div>
                 <label for="nameProduct">Nombre:</label>
@@ -99,7 +99,7 @@
                 <label for="priceProduct">Precio:</label>
                 <input type="text" name="priceProduct" id="priceProduct">
             </div>
-            <input type="submit" value="Guardar" id="updateProductButton">
+            <input type="submit" value="Guardar" id="ProductButton">
         </form>
     </section>
 </div>

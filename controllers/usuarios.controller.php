@@ -9,6 +9,10 @@
     $userUpdate = isset($_POST['nUser'])? $_POST['nUser']: 'null';
     $passUpdate = isset($_POST['passUser'])? $_POST['passUser']: 'null';
     $nameUpdate = isset($_POST['nNombre'])? $_POST['nNombre']: 'null';
+    // VARIABLES PARA INSERTAR UN NUEVO USUARIO
+    $userInsert = isset($_POST['newUser'])? $_POST['newUser']: 'null';
+    $passInsert = isset($_POST['newPass'])? $_POST['newPass']: 'null';
+    $nameInsert = isset($_POST['newNameUser'])? $_POST['newNameUser']: 'null';
 
     if($state == 'Activo'){
         $estado = 1;
@@ -21,8 +25,10 @@
         $stateResponse = $usuarios->statusUpdate($estado, $id);
     }elseif($idDelete != 'null'){
         $deleteResponse = $usuarios->deleteUser($idDelete);
-    }else if($idUpdate != 'null'){
+    }elseif($idUpdate != 'null'){
         $updateUser = $usuarios->updateUser($idUpdate, $userUpdate, $passUpdate, $nameUpdate);
+    }elseif($userInsert != 'null'){
+        $insertUser = $usuarios->addUser($userInsert, $passInsert, $nameInsert);
     }
     $arrayUsuarios = $usuarios->getUsuarios();
     require_once('./views/usuarios.view.php');

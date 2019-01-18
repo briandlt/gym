@@ -39,4 +39,20 @@
                 die("Error en la eliminación del producto");
             }
         }
+
+        public function updateProduct($id, $nombre, $descripcion, $costo, $precio){
+            $query = 'UPDATE PRODUCTO SET Nombre = ?, Descripcion = ?, Precio = ?, Costo = ? WHERE idProducto = ?';
+            $this->stmt = $this->conexion->prepare($query);
+            $this->stmt->bindParam(1, $nombre, PDO::PARAM_STR);
+            $this->stmt->bindParam(2, $descripcion, PDO::PARAM_STR);
+            $this->stmt->bindParam(3, $costo, PDO::PARAM_STR);
+            $this->stmt->bindParam(4, $precio, PDO::PARAM_STR);
+            $this->stmt->bindParam(5, $id, PDO::PARAM_STR);
+            $this->stmt->execute();
+            if($this->stmt){
+                die('Actualización exitosa');
+            }else{
+                die('Error en la actualización');
+            }
+        }
     }

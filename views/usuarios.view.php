@@ -3,7 +3,7 @@
 <section class="containerr">
     <h2>Usuarios</h2>
     <b></b>
-    <table id="myTable1" class="display">
+    <table id="myTable1" class="display tableUser">
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,7 +23,7 @@
                 <td class="nameUser"><?php echo $usuario['Nombre']; ?></td>
                 <td><?php echo $usuario['fechaCreacion']; ?></td>
                 <?php if($usuario['Estado'] == "Activo"): ?>
-                <td><select name="Estado" id="">
+                <td><select name="Estado">
                     <option value="Activo">Activo</option>
                     <option value="Inactivo">Inactivo</option>
                 </select></td>

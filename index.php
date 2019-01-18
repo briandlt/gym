@@ -9,8 +9,8 @@
         }else{
             require_once('./controllers/home.controller.php');
         }
-        require_once("./controllers/editar.controller.php");
+        require_once("./views/editar.view.php");
     }else{
         require_once('./controllers/home.controller.php');
-        require_once("./controllers/editar.controller.php");
+        require_once("./views/editar.view.php");
     }

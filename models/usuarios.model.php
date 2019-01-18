@@ -54,4 +54,28 @@
                 die("Error en la actualización");
             }
         }
+
+        public function addUser($user, $pass, $name){
+            $query = "INSERT INTO USUARIO (Nombre, Password, Usuario, fechaCreacion) VALUES (?,?,?,?)";
+            $fecha = date('Y-m-d H:i:s');
+            $this->stmt = $this->conexion->prepare($query);
+            $this->stmt->bindParam(1, $name, PDO::PARAM_STR);
+            $this->stmt->bindParam(2, $pass, PDO::PARAM_STR);
+            $this->stmt->bindParam(3, $user, PDO::PARAM_STR);
+            $this->stmt->bindParam(4, $fecha, PDO::PARAM_STR);
+            $this->stmt->execute();
+            if($this->stmt){
+                $query2 = 'SELECT idUsuario, Usuario, Nombre, fechaCreacion, Estado FROM USUARIO JOIN ESTADO ON usuario.idEstado = estado.idEstados ORDER BY idUsuario DESC LIMIT 1';
+                $this->stmt = $this->conexion->prepare($query2);
+                $this->stmt->execute();
+                $response = $this->stmt->fetch(PDO::FETCH_ASSOC);
+                if($response){
+                    die(json_encode($response));
+                }else{
+                    die('Error en la inserción');
+                }
+            }else{
+                die('Error en la inserción');
+            }
+        }
     }
