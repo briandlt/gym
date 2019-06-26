@@ -6,22 +6,22 @@
     <table id="myTable1" class="display">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ID venta</th>
+                <th>Usuario encargado</th>
+                <th>Fecha de venta</th>
                 <th>Total</th>
-                <th>Fecha de creacion</th>
-                <th>Estado</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($arrayVentas as $ventas): ?>
-            <tr>
-                <td id="id"><?php echo $ventas['idSalida'] ?></td>
-                <td><?php echo $ventas['total'] ?></td>
-                <td><?php echo $ventas['fechaCreacion'] ?></td>
-                <td><?php echo $ventas['Estado'] ?></td>
-                <td><a href="" class="icon-info" title="Detalles de venta"></a></td>
-            </tr>
+            <?php foreach ($arrayVentas as $ventas) : ?>
+                <tr>
+                    <td id="id"><?php echo $ventas['idSalida'] ?></td>
+                    <td><?php echo $ventas['usuarioCreo'] ?></td>
+                    <td><?php echo $ventas['fechaCreacion'] ?></td>
+                    <td><span>$</span><?php echo number_format($ventas['total'], 2) ?></td>
+                    <td><a href="" class="icon-info" title="Detalles de venta"></a></td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>

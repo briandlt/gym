@@ -10,6 +10,12 @@
     $descripcion = isset($_POST['description'])? $_POST['description']: 'null';
     $costo = isset($_POST['nCostoProd'])? $_POST['nCostoProd']: 'null';
     $precio = isset($_POST['nPriceProd'])? $_POST['nPriceProd']: 'null';
+    // VARIABLES PARA AGREGAR PRODUCTOS
+    // newProduct, newDescription, newCost, newPrice
+    $newProduct = isset($_POST['newProduct'])? $_POST['newProduct']: 'null';
+    $newDescription = isset($_POST['newDescription'])? $_POST['newDescription']: 'null';
+    $newCost = isset($_POST['newCost'])? $_POST['newCost']: 'null';
+    $newPrice = isset($_POST['newPrice'])? $_POST['newPrice']: 'null';
 
     if($state == 'Activo'){
         $estado = 1;
@@ -24,6 +30,8 @@
         $deleteResponse = $productos->deleteProduct($idDelete);
     }elseif($idUpdate != 'null'){
         $updateResponse = $productos->updateProduct($idUpdate, $nombre, $descripcion, $costo, $precio);
+    }elseif($newProduct != 'null'){
+        $createResponse = $productos->addProduct($newProduct, $newDescription, $newCost, $newPrice);
     }
     $arrayProductos = $productos->getProductos();
     require_once('views/productos.view.php');

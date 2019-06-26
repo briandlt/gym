@@ -9,8 +9,23 @@
                 $this->conexion->exec(DB_CHARSET);
                 return $this->conexion;
             }catch(Exception $e){
-                die("Error en la conexion con la base de datos " . $e->getMessage());
-                echo "Error en la linea " . $e->getLine();
+                die("Error en la conexion con la base de datos " . $e->getMessage() . ", Error en la linea " . $e->getLine());
             }
+        }
+
+        public function encriptar($string){
+            $salida = false;
+            $key = hash('sha256', SECRET_KEY);
+            $iv = substr(hash('sha256', SECRET_IV), 0, 16);
+            $salida = openssl_encrypt($string, METHOD, $key, 0, $iv);
+            $salida = base64_encode($salida);
+            return $salida;
+        }
+
+        public function desencriptar($string){
+            $key = hash('sha256', SECRET_KEY);
+            $iv = substr(hash('sha256', SECRET_IV), 0, 16);
+            $salida = openssl_decrypt(base64_decode($string), METHOD, $key, 0, $iv);
+            return $salida;
         }
     }

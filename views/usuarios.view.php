@@ -19,10 +19,10 @@
             <?php foreach($arrayUsuarios as $usuario): ?>
             <tr>
                 <td id="id"><?php echo $usuario['idUsuario'] ?></td>
-                <td class="usuario"><?php echo $usuario['Usuario']; ?></td>
+                <td class="usuario"><?php echo $usuario['usuario']; ?></td>
                 <td class="nameUser"><?php echo $usuario['Nombre']; ?></td>
                 <td><?php echo $usuario['fechaCreacion']; ?></td>
-                <?php if($usuario['Estado'] == "Activo"): ?>
+                <?php if($usuario['Estado'] == 'Activo'): ?>
                 <td><select name="Estado">
                     <option value="Activo">Activo</option>
                     <option value="Inactivo">Inactivo</option>

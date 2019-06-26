@@ -1,15 +1,16 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('icomoon.eot?p3aavq');
-  src:  url('icomoon.eot?p3aavq#iefix') format('embedded-opentype'),
-    url('icomoon.ttf?p3aavq') format('truetype'),
-    url('icomoon.woff?p3aavq') format('woff'),
-    url('icomoon.svg?p3aavq#icomoon') format('svg');
+  src: url('icomoon.eot?9mxsod');
+  src: url('icomoon.eot?9mxsod#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?9mxsod') format('truetype'),
+    url('icomoon.woff?9mxsod') format('woff'),
+    url('icomoon.svg?9mxsod#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -27,18 +28,27 @@
 .icon-calendar:before {
   content: "\e953";
 }
+
 .icon-delete:before {
   content: "\e9ac";
 }
+
+.icon-menu:before {
+  content: "\e9bd";
+}
+
 .icon-plus:before {
   content: "\ea0a";
 }
+
 .icon-minus:before {
   content: "\ea0b";
 }
+
 .icon-info:before {
   content: "\ea0c";
 }
+
 .icon-update:before {
   content: "\ea2e";
 }

@@ -15,6 +15,15 @@
             return $this->result;
         }
 
+        public function getMembresia($id){
+            $query = 'SELECT * FROM vwmembresias WHERE idMembresia = ?';
+            $this->stmt = $this->conexion->prepare($query);
+            $this->stmt->bindParam(1, $id, PDO::PARAM_INT);
+            $this->stmt->execute();
+            $this->result = $this->stmt->fetch(PDO::FETCH_ASSOC);
+            die(json_encode($this->result));
+        }
+
         public function statusUpdate($id, $estado){
             $query = 'UPDATE MEMBRESIA SET idEstado = ? WHERE idMembresia = ?';
             $this->stmt = $this->conexion->prepare($query);
@@ -54,6 +63,25 @@
                 die("Actualización exitosa");
             }else{
                 die("Error en la acutualización");
+            }
+        }
+
+        public function addMembership($nombre, $precio, $meses, $hi, $hf){
+            $query = "INSERT INTO MEMBRESIA (Nombre, fechaCreacion, Precio, meses, horaInicio, horaFinal, idUsuarioCreo, idEstado) VALUES(?,?,?,?,?,?,?,1)";
+            $fechaActual = date('Y-m-d H:i:s');
+            $this->stmt = $this->conexion->prepare($query);
+            $this->stmt->bindParam(1, $nombre, PDO::PARAM_STR);
+            $this->stmt->bindParam(2, $fechaActual, PDO::PARAM_STR);
+            $this->stmt->bindParam(3, $precio, PDO::PARAM_INT);
+            $this->stmt->bindParam(4, $meses, PDO::PARAM_INT);
+            $this->stmt->bindParam(5, $hi, PDO::PARAM_STR);
+            $this->stmt->bindParam(6, $hf, PDO::PARAM_STR);
+            $this->stmt->bindParam(7, $_SESSION['idUser'], PDO::PARAM_INT);
+            $this->stmt->execute();
+            if($this->stmt){
+                die('Membresia creada exitosamente');
+            }else{
+                die('Error en la inserción');
             }
         }
     }
