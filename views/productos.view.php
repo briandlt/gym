@@ -18,28 +18,28 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($arrayProductos as $producto): ?>
-            <tr>
-                <td id="id"><?php echo $producto['idProducto'] ?></td>
-                <td class="nameProduct"><?php echo $producto['Nombre'] ?></td>
-                <td class="descripcion"><?php echo $producto['Descripcion'] ?></td>
-                <td class="costoProduct"><?php echo $producto['Costo'] ?></td>
-                <td class="priceProduct"><?php echo $producto['Precio'] ?></td>
-                <td><?php echo $producto['fechaCreacion'] ?></td>
-                <?php if($producto['Estado'] == "Activo"): ?>
-                <td><select name="Estado" id="">
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                </select></td>
-                <?php else: ?>
-                <td><select name="Estado" id="">
-                    <option value="Inactivo">Inactivo</option>
-                    <option value="Activo">Activo</option>
-                </select></td>
-                <?php endif; ?>
-                <td><a href="" class="icon-update updateProduct" title="Actualizar producto"></a></td>
-                <td><a href="" class="icon-delete" title="Eliminar producto"></a></td>
-            </tr>
+            <?php foreach ($arrayProductos as $producto) : ?>
+                <tr>
+                    <td id="id"><?php echo $producto['idProducto'] ?></td>
+                    <td class="nameProduct"><?php echo $producto['Nombre'] ?></td>
+                    <td class="descripcion"><?php echo $producto['Descripcion'] ?></td>
+                    <td class="costoProduct"><span>$</span><?php echo number_format($producto['Costo'], 2) ?></td>
+                    <td class="priceProduct"><span>$</span><?php echo number_format($producto['Precio'], 2) ?></td>
+                    <td><?php echo $producto['fechaCreacion'] ?></td>
+                    <?php if ($producto['Estado'] == "Activo") : ?>
+                        <td><select name="Estado" id="">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select></td>
+                    <?php else : ?>
+                        <td><select name="Estado" id="">
+                                <option value="Inactivo">Inactivo</option>
+                                <option value="Activo">Activo</option>
+                            </select></td>
+                    <?php endif; ?>
+                    <td><a href="" class="icon-update updateProduct" title="Actualizar producto"></a></td>
+                    <td><a href="" class="icon-delete" title="Eliminar producto"></a></td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>

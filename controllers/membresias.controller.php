@@ -11,6 +11,12 @@
     $months = isset($_POST['nMonth'])? $_POST['nMonth']: 'null';
     $startHour = isset($_POST['nHinicio'])? $_POST['nHinicio']: 'null';
     $finishHour = isset($_POST['nHfin'])? $_POST['nHfin']: 'null';
+    // VARIABLES PARA CREACION DE MEMBRESIAS
+    $nName = isset($_POST['newName'])? $_POST['newName']: 'null';
+    $nPrice = isset($_POST['newPrice'])? $_POST['newPrice']: 'null';
+    $nMonths = isset($_POST['newMonths'])? $_POST['newMonths']: 'null';
+    $nHI = isset($_POST['newHI'])? $_POST['newHI']: 'null';
+    $nHF = isset($_POST['newHF'])? $_POST['newHF']: 'null';
     
     if($state == 'Activo'){
         $estado = 1;
@@ -25,6 +31,8 @@
         $deleteResponse = $membresias->deleteMembership($idDelete);
     }elseif($idUpdate != 'null'){
         $updateResponse = $membresias->updateMembership($idUpdate, $name, $price, $months, $startHour, $finishHour);
+    }elseif($nName != 'null'){
+        $createResponse = $membresias->addMembership($nName, $nPrice, $nMonths, $nHI, $nHF);
     }
     
     $arrayMembresias = $membresias->getMembresias();

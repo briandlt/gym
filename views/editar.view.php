@@ -14,6 +14,10 @@
                 <label for="nameUser">Nombre:</label>
                 <input type="text" name="name" id="nameUser" value="">
             </div>
+            <div>
+                <label for="imgUser">Imagen:</label>
+                <input type="file" accept="image/*" name="imgUser" id="imgUser">
+            </div>
             <input type="submit" value="Guardar" id="UserButton">
         </form>
     </section>
@@ -36,6 +40,10 @@
             <div>
                 <label for="telMember">Teléfono:</label>
                 <input type="text" name="telMember" id="telMember">
+            </div>
+            <div>
+                <label for="imgMember">Foto:</label>
+                <input type="file" accept="image/*" name="imgMember" id="imgMember">
             </div>
             <input type="submit" value="Guardar" id="MemberButton">
         </form>
@@ -102,4 +110,9 @@
             <input type="submit" value="Guardar" id="ProductButton">
         </form>
     </section>
+    <section id="formCompraVenta" class="formEdit">
+        <h3></h3>
+        <?php require_once('views/templates/addBuySale.php'); ?>
+    </section>
+
 </div>
