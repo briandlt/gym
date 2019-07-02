@@ -5,7 +5,7 @@
         <div class="containerRegistro">
             <section class="datosGym">
                 <div class="dataGym">
-                    <h2>SPORT CITY</h2>
+                    <h2>Capitan Cross Training</h2>
                     <p>Salvador Garcia Diego #273</p>
                     <p>36433211</p>
                     <p id="welcome">Bienvenido!!!</p>
